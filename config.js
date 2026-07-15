@@ -4,5 +4,5 @@
  * privado de Google Sheets.
  */
 window.INMOCONECTA_CONFIG = {
-  appsScriptUrl: "PEGA_AQUI_LA_URL_DEL_RECEPTOR_APPS_SCRIPT"
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbxceYSxQilERDQZ-sIW5I4dvvJ7govQf7Rm1i7WWbhxdcmZRAbHxr_REe87JievO6eSSw/exec"
 };
