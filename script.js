@@ -1,5 +1,5 @@
 /*
- * Formulario público de InmoConecta.
+ * Formulario público de InmoPRO Ayacucho.
  * Envía solicitudes a un Web App de Google Apps Script y conserva únicamente
  * los envíos pendientes cuando el dispositivo está sin conexión.
  */
@@ -84,10 +84,13 @@
 
     requireField("nombres", "Escribe tus nombres.");
     requireField("apellidos", "Escribe tus apellidos.");
+    requireField("numeroDocumento", "Escribe tu DNI.");
     requireField("celular", "Escribe un número de celular.");
-    requireField("operacion", "Selecciona una operación.");
-    requireField("tipoInmueble", "Selecciona un tipo de inmueble.");
-    requireField("zonaInteres", "Indica una zona de interés.");
+
+    if (value("numeroDocumento") && !/^\d{8}$/.test(value("numeroDocumento"))) {
+      setFieldError("numeroDocumento", "El DNI debe tener exactamente 8 dígitos.");
+      firstInvalid ||= field("numeroDocumento");
+    }
 
     const phoneDigits = peruPhone(value("celular"));
     if (value("celular") && phoneDigits.length < 9) {
@@ -99,13 +102,6 @@
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setFieldError("correo", "Revisa el correo electrónico.");
       firstInvalid ||= field("correo");
-    }
-
-    const min = Number(value("presupuestoMin"));
-    const max = Number(value("presupuestoMax"));
-    if (value("presupuestoMin") && value("presupuestoMax") && max < min) {
-      setFieldError("presupuestoMax", "Debe ser igual o mayor que el presupuesto mínimo.");
-      firstInvalid ||= field("presupuestoMax");
     }
 
     if (!checked("consentimiento")) {
@@ -135,27 +131,9 @@
       fechaCliente: new Date().toISOString(),
       nombres: value("nombres"),
       apellidos: value("apellidos"),
-      tipoDocumento: value("tipoDocumento"),
-      numeroDocumento: value("numeroDocumento"),
+      numeroDocumento: value("numeroDocumento").replace(/\D/g, ""),
       celular: peruPhone(value("celular")),
-      whatsapp: checked("whatsapp") ? "Sí" : "No",
       correo: value("correo"),
-      distrito: value("distrito"),
-      ocupacion: value("ocupacion"),
-      operacion: value("operacion"),
-      tipoInmueble: value("tipoInmueble"),
-      dormitorios: value("dormitorios"),
-      zonaInteres: value("zonaInteres"),
-      proyecto: value("proyecto"),
-      moneda: value("moneda"),
-      presupuestoMin: value("presupuestoMin"),
-      presupuestoMax: value("presupuestoMax"),
-      formaPago: value("formaPago"),
-      plazo: value("plazo"),
-      origen: value("origen"),
-      contactoPreferido: value("contactoPreferido"),
-      horaPreferida: value("horaPreferida"),
-      notas: value("notas"),
       consentimiento: checked("consentimiento") ? "Sí" : "No"
     };
   }
@@ -213,10 +191,10 @@
   }
 
   function showSuccess(payload, queued = false) {
-    successTitle.textContent = queued ? "Solicitud guardada en este dispositivo" : "¡Gracias por registrarte!";
+    successTitle.textContent = queued ? "Registro guardado en este dispositivo" : "¡Gracias por registrarse!";
     successMessage.textContent = queued
       ? "No hay conexión. La solicitud se enviará automáticamente cuando este navegador vuelva a tener internet."
-      : "Tu información fue enviada. Un asesor inmobiliario se comunicará contigo próximamente.";
+      : "Su información fue enviada. El equipo de InmoPRO Ayacucho se comunicará con usted próximamente.";
     registrationCode.textContent = `Código de registro: ${payload.id}`;
     if (typeof successDialog.showModal === "function") successDialog.showModal();
     else successDialog.setAttribute("open", "");
@@ -238,7 +216,6 @@
     try {
       await sendPayload(payload);
       form.reset();
-      field("whatsapp").checked = true;
       showSuccess(payload, false);
     } catch (error) {
       if (error.message === "CONFIG_NOT_READY") {
@@ -246,12 +223,11 @@
       } else {
         queuePayload(payload);
         form.reset();
-        field("whatsapp").checked = true;
         showSuccess(payload, true);
       }
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = "Enviar mi solicitud →";
+      submitButton.textContent = "Registrar mis datos →";
       updateConnectionStatus();
     }
   }

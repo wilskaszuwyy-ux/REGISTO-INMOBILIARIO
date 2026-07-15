@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Formulario de interés inmobiliario conectado con Google Sheets.">
-  <meta name="theme-color" content="#3155f6">
-  <title>InmoConecta · Encuentra tu próximo inmueble</title>
+  <meta name="description" content="Registro de interesados de InmoPRO Ayacucho, programa profesional de agentes inmobiliarios.">
+  <meta name="theme-color" content="#7f18dd">
+  <title>InmoPRO Ayacucho · Registro de interesados</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,46 +14,49 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark" aria-hidden="true">IC</span>
-        <span><strong>InmoConecta</strong><small>Asesoría inmobiliaria</small></span>
+        <span class="brand-logo" role="img" aria-label="InmoPRO, Programa Profesional de Agentes Inmobiliarios"></span>
       </a>
-      <div class="privacy-chip"><span aria-hidden="true">◆</span> Tus datos serán tratados de forma privada</div>
+      <div class="header-actions">
+        <div class="privacy-chip"><span aria-hidden="true">◆</span> Sus datos serán tratados de forma privada</div>
+        <a class="header-contact" href="https://wa.me/51929307776" target="_blank" rel="noopener" aria-label="Contactar a InmoPRO por WhatsApp">WhatsApp&nbsp; 929 307 776</a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero" id="inicio">
       <div class="hero-content">
-        <p class="eyebrow light">Tu próximo espacio empieza aquí</p>
-        <h1>Encuentra una propiedad que encaje contigo.</h1>
-        <p>Cuéntanos qué estás buscando y un asesor inmobiliario se comunicará contigo para presentarte las mejores alternativas.</p>
-        <a class="button button-white" href="#registro">Quiero recibir información →</a>
+        <p class="eyebrow light">InmoPRO · Ayacucho</p>
+        <h1>Impulsa tu futuro en el sector inmobiliario.</h1>
+        <p>Programa profesional para agentes y asesores inmobiliarios. Registre sus datos para recibir información sobre nuestras capacitaciones.</p>
+        <div class="hero-actions">
+          <a class="button button-accent" href="#registro">Registrar mis datos →</a>
+          <a class="button button-outline" href="https://www.facebook.com/profile.php?id=61574812745042" target="_blank" rel="noopener">Visitar Facebook</a>
+        </div>
         <div class="hero-trust">
-          <span><b>✓</b> Atención personalizada</span>
-          <span><b>✓</b> Sin compromiso</span>
+          <span><b>✓</b> Capacitación especializada</span>
+          <span><b>✓</b> Atención en Ayacucho</span>
           <span><b>✓</b> Datos protegidos</span>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="sun"></div>
-        <div class="building building-back"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="building building-front"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="floating-card"><span>⌂</span><div><strong>Asesor disponible</strong><small>Te contactaremos pronto</small></div></div>
-      </div>
+      <figure class="hero-media">
+        <img src="inmopro-portada.png" alt="Capacitación para asesores inmobiliarios de Sistemas Viben e InmoPRO">
+        <figcaption><span>Jr. Sol N.° 361, Ayacucho</span><a href="tel:+51929307776">+51 929 307 776</a></figcaption>
+      </figure>
     </section>
 
     <section class="benefits" aria-label="Beneficios del servicio">
-      <article><span class="benefit-icon blue">⌕</span><div><strong>Búsqueda a tu medida</strong><p>Filtramos alternativas según tus necesidades reales.</p></div></article>
-      <article><span class="benefit-icon coral">◇</span><div><strong>Acompañamiento experto</strong><p>Resolvemos tus dudas durante todo el proceso.</p></div></article>
-      <article><span class="benefit-icon yellow">⌁</span><div><strong>Respuesta oportuna</strong><p>Recibimos tu solicitud directamente en nuestro sistema.</p></div></article>
+      <article><span class="benefit-icon purple">01</span><div><strong>Formación especializada</strong><p>Capacitación orientada al desarrollo profesional de asesores inmobiliarios.</p></div></article>
+      <article><span class="benefit-icon orange">02</span><div><strong>Tu aliado para el éxito</strong><p>Herramientas y acompañamiento para fortalecer su crecimiento profesional.</p></div></article>
+      <article><span class="benefit-icon dark">03</span><div><strong>Contacto directo</strong><p>Atención en Ayacucho mediante teléfono, WhatsApp y Facebook.</p></div></article>
     </section>
 
     <section class="registration-section" id="registro" aria-labelledby="formTitle">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Solicitud inmobiliaria</p>
-          <h2 id="formTitle">Cuéntanos qué propiedad estás buscando</h2>
-          <p>Completa los campos marcados con * para que podamos brindarte una atención personalizada.</p>
+          <p class="eyebrow">Registro InmoPRO</p>
+          <h2 id="formTitle">Ingrese sus datos</h2>
+          <p>Complete los campos marcados con * y nuestro equipo se comunicará con usted.</p>
         </div>
         <div class="connection-status" id="connectionStatus" role="status" aria-live="polite">
           <span></span><b>Conectado</b>
@@ -63,76 +66,49 @@
       <form id="leadForm" novalidate>
         <article class="form-card">
           <div class="form-card-heading">
-            <span class="step-number blue-step">01</span>
-            <div><h3>Datos personales</h3><p>Información para identificarte y comunicarnos contigo.</p></div>
+            <span class="step-number purple-step">01</span>
+            <div><h3>Datos personales</h3><p>Información necesaria para registrarlo y comunicarnos con usted.</p></div>
           </div>
           <div class="form-grid">
             <label><span>Nombres <b>*</b></span><input name="nombres" type="text" maxlength="80" autocomplete="given-name" required placeholder="Ej. María Elena"><small class="error"></small></label>
             <label><span>Apellidos <b>*</b></span><input name="apellidos" type="text" maxlength="100" autocomplete="family-name" required placeholder="Ej. Ramírez Torres"><small class="error"></small></label>
-            <label><span>Tipo de documento</span><select name="tipoDocumento"><option value="">Seleccionar</option><option>DNI</option><option>Carné de extranjería</option><option>Pasaporte</option><option>RUC</option></select></label>
-            <label><span>Número de documento</span><input name="numeroDocumento" type="text" inputmode="numeric" maxlength="15" placeholder="Ej. 76543210"></label>
+            <label><span>DNI <b>*</b></span><input name="numeroDocumento" type="text" inputmode="numeric" pattern="[0-9]{8}" minlength="8" maxlength="8" autocomplete="off" required placeholder="Ej. 76543210"><small class="error"></small></label>
             <label>
               <span>Celular <b>*</b></span>
               <div class="phone-field"><i>+51</i><input name="celular" type="tel" inputmode="tel" maxlength="15" autocomplete="tel" required placeholder="987 654 321"></div>
               <small class="error"></small>
             </label>
-            <label><span>Correo electrónico</span><input name="correo" type="email" maxlength="150" autocomplete="email" placeholder="nombre@correo.com"><small class="error"></small></label>
-            <label><span>Distrito de residencia</span><input name="distrito" type="text" maxlength="80" autocomplete="address-level2" placeholder="Ej. San Miguel"></label>
-            <label><span>Ocupación</span><input name="ocupacion" type="text" maxlength="100" placeholder="Ej. Ingeniera civil"></label>
+            <label class="full-field"><span>Correo electrónico <em>(opcional)</em></span><input name="correo" type="email" maxlength="150" autocomplete="email" placeholder="nombre@correo.com"><small class="error"></small></label>
           </div>
-          <label class="check-field"><input name="whatsapp" type="checkbox" checked><span><strong>Este número tiene WhatsApp</strong><small>Así podremos enviarte información de las propiedades.</small></span></label>
-        </article>
-
-        <article class="form-card">
-          <div class="form-card-heading">
-            <span class="step-number coral-step">02</span>
-            <div><h3>Interés inmobiliario</h3><p>Ayúdanos a entender la propiedad ideal para ti.</p></div>
-          </div>
-          <div class="form-grid three-columns">
-            <label><span>Tipo de operación <b>*</b></span><select name="operacion" required><option value="">Seleccionar</option><option>Compra</option><option>Alquiler</option><option>Inversión</option></select><small class="error"></small></label>
-            <label><span>Tipo de inmueble <b>*</b></span><select name="tipoInmueble" required><option value="">Seleccionar</option><option>Departamento</option><option>Casa</option><option>Terreno</option><option>Local comercial</option><option>Oficina</option><option>Almacén</option><option>Otro</option></select><small class="error"></small></label>
-            <label><span>Dormitorios</span><select name="dormitorios"><option value="">No definido</option><option value="1">1 dormitorio</option><option value="2">2 dormitorios</option><option value="3">3 dormitorios</option><option value="4+">4 o más</option><option>No aplica</option></select></label>
-            <label class="span-two"><span>Zona o distritos de interés <b>*</b></span><input name="zonaInteres" type="text" maxlength="150" required placeholder="Ej. Miraflores, Barranco o Surco"><small class="error"></small></label>
-            <label><span>Proyecto de interés</span><input name="proyecto" type="text" maxlength="120" placeholder="Ej. Residencial Los Olivos"></label>
-            <label><span>Moneda</span><select name="moneda"><option value="PEN">Soles (S/)</option><option value="USD">Dólares (US$)</option></select></label>
-            <label><span>Presupuesto mínimo</span><input name="presupuestoMin" type="number" min="0" step="1000" inputmode="decimal" placeholder="150000"></label>
-            <label><span>Presupuesto máximo</span><input name="presupuestoMax" type="number" min="0" step="1000" inputmode="decimal" placeholder="250000"><small class="error"></small></label>
-            <label><span>Forma de pago</span><select name="formaPago"><option value="">Por definir</option><option>Crédito hipotecario</option><option>Recursos propios</option><option>Mixto</option><option>Techo Propio / MiVivienda</option></select></label>
-            <label><span>Plazo estimado</span><select name="plazo"><option value="">Por definir</option><option>Inmediato</option><option>1 a 3 meses</option><option>3 a 6 meses</option><option>6 a 12 meses</option><option>Más de un año</option></select></label>
-          </div>
-        </article>
-
-        <article class="form-card">
-          <div class="form-card-heading">
-            <span class="step-number yellow-step">03</span>
-            <div><h3>Preferencias de contacto</h3><p>Indícanos cómo y cuándo prefieres que te contactemos.</p></div>
-          </div>
-          <div class="form-grid three-columns">
-            <label><span>¿Cómo nos conociste?</span><select name="origen"><option value="">Seleccionar</option><option>Facebook</option><option>Instagram</option><option>TikTok</option><option>Portal inmobiliario</option><option>Recomendación</option><option>Evento o feria</option><option>Otro</option></select></label>
-            <label><span>Medio preferido</span><select name="contactoPreferido"><option>WhatsApp</option><option>Llamada</option><option>Correo electrónico</option></select></label>
-            <label><span>Hora preferida</span><input name="horaPreferida" type="time"></label>
-            <label class="full-field"><span>Comentarios o necesidades especiales</span><textarea name="notas" rows="5" maxlength="1500" placeholder="Ej. Busco buena iluminación, estacionamiento y cercanía a áreas verdes..."></textarea></label>
-          </div>
-          <label class="check-field consent"><input name="consentimiento" type="checkbox" required><span><strong>Autorizo el registro y uso de mis datos para recibir atención inmobiliaria <b>*</b></strong><small>La información se utilizará únicamente para responder esta solicitud.</small></span></label>
+          <label class="check-field consent"><input name="consentimiento" type="checkbox" required><span><strong>Autorizo el registro y uso de mis datos para ser contactado por InmoPRO Ayacucho <b>*</b></strong><small>La información se utilizará únicamente para informar sobre sus programas y servicios.</small></span></label>
           <small class="consent-error" id="consentError"></small>
         </article>
 
         <div class="submit-area">
-          <p><span aria-hidden="true">◆</span><span><strong>Envío seguro a nuestro registro</strong><small>La fecha y hora se generan automáticamente al recibir tu solicitud.</small></span></p>
-          <button class="button button-primary" id="submitButton" type="submit">Enviar mi solicitud →</button>
+          <p><span aria-hidden="true">◆</span><span><strong>Registro seguro</strong><small>La fecha y hora se generan automáticamente al recibir su solicitud.</small></span></p>
+          <button class="button button-primary" id="submitButton" type="submit">Registrar mis datos →</button>
         </div>
       </form>
     </section>
   </main>
 
-  <footer><p>InmoConecta · Atención inmobiliaria personalizada</p></footer>
+  <footer>
+    <div class="footer-inner">
+      <div><strong>InmoPRO Ayacucho</strong><small>Programa Profesional de Agentes Inmobiliarios</small></div>
+      <div class="footer-links">
+        <a href="https://maps.google.com/?q=Jr.+Sol+361,+Ayacucho,+Peru" target="_blank" rel="noopener">Jr. Sol N.° 361, Ayacucho</a>
+        <a href="https://wa.me/51929307776" target="_blank" rel="noopener">WhatsApp: 929 307 776</a>
+        <a href="https://www.facebook.com/profile.php?id=61574812745042" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </footer>
 
   <dialog id="successDialog" aria-labelledby="successTitle">
     <div class="dialog-content">
       <span class="success-icon" aria-hidden="true">✓</span>
       <p class="eyebrow green-text">Solicitud recibida</p>
       <h2 id="successTitle">¡Gracias por registrarte!</h2>
-      <p>Tu información fue enviada. Un asesor inmobiliario se comunicará contigo próximamente.</p>
+      <p>Su información fue enviada. El equipo de InmoPRO Ayacucho se comunicará con usted próximamente.</p>
       <button class="button button-primary full-button" id="closeSuccessButton" type="button">Finalizar</button>
       <small id="registrationCode"></small>
     </div>
